@@ -7,9 +7,6 @@ config:
     github.com/eosc-kc/keycloak:
       branch: 22.0.3-staging
       repo: https://github.com/eosc-kc/keycloak
-    github.com/keycloak/keycloak-documentation:
-      branch: main
-      repo: https://github.com/keycloak/keycloak-documentation
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
@@ -18,46 +15,52 @@ sqa_criteria:
     repos:
       github.com/eosc-kc/keycloak git:
         commands:
-        - /usr/bin/env sh .sqa/script.sickly-cyan-eel.sh
-        container: qc.acc_ugly-violet-eleuth
+        - /usr/bin/env sh .sqa/script.pokey-pear-insect.sh
+        container: qc.acc_baggy-cornflower-armadillo
   QC.Doc:
     repos:
-      github.com/keycloak/keycloak-documentation find_doc_files.py:
+      github.com/eosc-kc/keycloak find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.queasy-bronze-wallaby.sh
-        container: qc.doc_ready-teal-lionfish
-      github.com/keycloak/keycloak-documentation git:
+        - /usr/bin/env sh .sqa/script.slimy-goldenrod-sponge.sh
+        container: qc.doc_snippy-sepia-maltese
+      github.com/eosc-kc/keycloak git:
         commands:
-        - /usr/bin/env sh .sqa/script.slimy-cerise-markhor.sh
-        container: qc.doc_goopy-amber-spaniel
-      github.com/keycloak/keycloak-documentation markdownlint:
+        - /usr/bin/env sh .sqa/script.baggy-champagne-quoll.sh
+        container: qc.doc_skimpy-sepia-opossum
+      github.com/eosc-kc/keycloak markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.geeky-corn-gharial.sh
-        container: qc.doc_tasty-buff-koala
+        - /usr/bin/env sh .sqa/script.zippy-cinnabar-zebra.sh
+        container: qc.doc_breezy-black-greyhound
   QC.Lic:
     repos:
       github.com/eosc-kc/keycloak licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.hazy-viridian-eagle.sh
-        container: qc.lic_stuffy-sangria-monster
+        - /usr/bin/env sh .sqa/script.bumpy-malachite-avocet.sh
+        container: qc.lic_tasty-scarlet-audemer
+  QC.Met:
+    repos:
+      github.com/eosc-kc/keycloak validate_codemeta:
+        commands:
+        - /usr/bin/env sh .sqa/script.lumpy-fuchsia-hyrax.sh
+        container: qc.met_squirrely-pumpkin-sparrow
   QC.Sty:
     repos:
       github.com/eosc-kc/keycloak checkstyle:
         commands:
-        - /usr/bin/env sh .sqa/script.freaky-beige-barnacle.sh
-        container: qc.sty_homely-azure-frog
+        - /usr/bin/env sh .sqa/script.ready-tomato-flounder.sh
+        container: qc.sty_bumpy-aquamarine-blue
       github.com/eosc-kc/keycloak hadolint:
         commands:
-        - /usr/bin/env sh .sqa/script.gamy-champagne-fish.sh
-        container: qc.sty_slimy-flax-sparrow
+        - /usr/bin/env sh .sqa/script.homey-aqua-wrasse.sh
+        container: qc.sty_lousy-cornflower-corgi
       github.com/eosc-kc/keycloak jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.shaggy-jade-akbash.sh
-        container: qc.sty_cranky-pink-crocodile
+        - /usr/bin/env sh .sqa/script.sleepy-gold-whale.sh
+        container: qc.sty_craggy-xanthic-cow
   QC.Ver:
     repos:
       github.com/eosc-kc/keycloak get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.clammy-charcoal-clam.sh
-        container: qc.ver_snippy-thistle-eleuth
+        - /usr/bin/env sh .sqa/script.surly-taupe-dachsbracke.sh
+        container: qc.ver_flimsy-aquamarine-hyena
 timeout: 5400

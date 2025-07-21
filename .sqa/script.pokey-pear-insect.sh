@@ -4,6 +4,6 @@
 # SPDX-License-Identifier: GPL-3.0-only
 
 (
-cd github.com/keycloak/keycloak-documentation &&
-    find_doc_files.py --file_type all
+cd github.com/eosc-kc/keycloak &&
+    git rev-parse --is-inside-work-tree 
 )
